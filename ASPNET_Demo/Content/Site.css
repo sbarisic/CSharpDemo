@@ -39,6 +39,25 @@ textarea {
 	margin: 0px;
 }
 
+.clientsel {
+	position: fixed;
+	background-color: var(--clientsel-clr);
+	color: var(--text-light);
+	padding: 8px;
+	font-size: 18px;
+	display: block;
+	margin: 0 auto;
+	position: fixed;
+	left: 256px;
+	right: 0px;
+}
+
+	.clientsel span {
+		color: var(--text-light-hover);
+	}
+
+
+
 .logoimg {
 	display: block;
 	margin: 0 auto;
@@ -67,19 +86,3 @@ textarea {
 		.sidenav a:hover {
 			color: var(--text-light-hover);
 		}
-
-.clientsel {
-	background-color: var(--clientsel-clr);
-	color: var(--text-light);
-	padding: 8px;
-	font-size: 18px;
-	display: block;
-	margin: 0 auto;
-	position: fixed;
-	left: 256px;
-	right: 0px;
-}
-
-	.clientsel span {
-		color: var(--text-light-hover);
-	}
