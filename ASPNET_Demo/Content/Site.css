@@ -1,31 +1,85 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿:root {
+	--background-clr: rgb(255, 209, 169);
+	--navbar-clr: rgb(251, 109, 76);
+	--clientsel-clr: rgb(255, 147, 122);
+	--navbar-top-clr: rgb(138, 0, 0);
+	--text-light: white;
+	--text-light-hover: var(--navbar-top-clr);
+}
+
+
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background-color: var(--background-clr);
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
 textarea {
-    max-width: 280px;
+	max-width: 280px;
 }
 
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .jumbotron {
-        margin-top: 20px;
-    }
-
-    .body-content {
-        padding: 0;
-    }
+.container {
+	padding: 0;
+	margin: 0;
+	margin-left: 300px;
+	width: 80%;
 }
+
+.navbar {
+	background-color: var(--navbar-top-clr);
+	border: none;
+	margin: 0px;
+}
+
+.logoimg {
+	display: block;
+	margin: 0 auto;
+}
+
+.sidenav {
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	width: 256px; /* Set the width of the sidebar */
+	left: 0;
+	position: fixed;
+	background-color: var(--navbar-clr);
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 20px;
+}
+
+	.sidenav a {
+		margin-left: 5%;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 18px;
+		text-decoration: none;
+		color: var(--text-light);
+		display: block;
+	}
+
+		.sidenav a:hover {
+			color: var(--text-light-hover);
+		}
+
+.clientsel {
+	background-color: var(--clientsel-clr);
+	color: var(--text-light);
+	padding: 8px;
+	font-size: 18px;
+	display: block;
+	margin: 0 auto;
+	position: fixed;
+	left: 256px;
+	right: 0px;
+}
+
+	.clientsel span {
+		color: var(--text-light-hover);
+	}

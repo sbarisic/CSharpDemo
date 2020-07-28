@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ASPNET_Demo.code;
 
 namespace ASPNET_Demo {
+	[LinkedPage(30)]
 	public partial class Contact : Page {
 		protected void Page_Load(object sender, EventArgs e) {
 

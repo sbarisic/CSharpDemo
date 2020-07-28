@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpDemo", "CSharpDemo\CSharpDemo.csproj", "{968D3371-579B-49E4-B79E-4AF9086847E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET_Demo", "ASPNET_Demo\ASPNET_Demo.csproj", "{C8A6DBB9-AECD-4CA0-8A76-2FC61AA9CB5D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD} = {D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCore_Demo", "ASPNETCore_Demo\ASPNETCore_Demo.csproj", "{73F6D345-FEFD-44E2-AF90-44B8801F55F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCore_Demo", "ASPNETCore_Demo\ASPNETCore_Demo.csproj", "{73F6D345-FEFD-44E2-AF90-44B8801F55F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET", "ASP.NET", "{03230D37-2276-4F1D-8B00-81DB911207E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET_WS_Demo", "ASPNET_WS_Demo\ASPNET_WS_Demo.csproj", "{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +34,17 @@ Global
 		{73F6D345-FEFD-44E2-AF90-44B8801F55F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73F6D345-FEFD-44E2-AF90-44B8801F55F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73F6D345-FEFD-44E2-AF90-44B8801F55F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8A6DBB9-AECD-4CA0-8A76-2FC61AA9CB5D} = {03230D37-2276-4F1D-8B00-81DB911207E9}
+		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD} = {03230D37-2276-4F1D-8B00-81DB911207E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68EDE2BD-E901-493C-932E-93CE5588B282}
