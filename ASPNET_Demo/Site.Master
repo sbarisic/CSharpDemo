@@ -40,6 +40,7 @@
 
 		<div class="navbar navbar-inverse navbar-fixed-top">
 		</div>
+
 		<div id="divClientSelection" class="clientsel" runat="server">
 			<label>Ime:</label>
 			<asp:Label ID="lblIme" runat="server">IME</asp:Label>
