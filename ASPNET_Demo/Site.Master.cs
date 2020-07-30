@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Reflection;
 using ASPNET_Demo.code;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace ASPNET_Demo {
 	public partial class SiteMaster : MasterPage {
@@ -31,8 +33,6 @@ namespace ASPNET_Demo {
 
 				divSidenav.Controls.Add(PageLink);
 			}
-
-			
 		}
 	}
 }

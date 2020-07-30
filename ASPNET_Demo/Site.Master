@@ -66,6 +66,28 @@
 			</footer>
 		</div>
 
+
+		<div class="popup" runat="server">
+			<label for="ibroj">Interni broj</label>
+			<input type="text" id="ibroj" name="ibroj" runat="server"><br>
+			<br>
+			<input type="submit" value="Find" runat="server" />
+
+			<br />
+			<br />
+			<div id="divPopupKlijent" runat="server">
+				<label>Ime:</label>
+				<asp:Label ID="lblImePopup" runat="server">IME</asp:Label>
+				<label>Prezime:</label>
+				<asp:Label ID="lblPrezimePopup" runat="server">PREZIME</asp:Label>
+				<br />
+				<label>Interni broj:</label>
+				<asp:Label ID="lblInterniBrojPopup" runat="server">000000</asp:Label>
+			</div>
+			<div id="divPopupNepoznato" runat="server">
+				<label>Nepoznat klijent</label>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
