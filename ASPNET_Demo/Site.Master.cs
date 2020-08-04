@@ -8,6 +8,8 @@ using System.Reflection;
 using ASPNET_Demo.code;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Web.Services;
+using ZweiteShared;
 
 namespace ASPNET_Demo {
 	public partial class SiteMaster : MasterPage {
@@ -33,6 +35,25 @@ namespace ASPNET_Demo {
 
 				divSidenav.Controls.Add(PageLink);
 			}
+
+			FillSelectedClient(Session[nameof(Klijent)] as Klijent);
+		}
+
+		void FillSelectedClient(Klijent K) {
+			if (K != null) {
+				divClientSelection.Visible = true;
+				lblIme.Text = K.Ime;
+				lblPrezime.Text = K.Prezime;
+				lblInterniBroj.Text = K.InterniBroj;
+			} else {
+				divClientSelection.Visible = false;
+			}
+		}
+
+		protected void btnSelectClient_Click(object sender, EventArgs e) {
+			ZweitePage.FindClient(ibroj.Value, out Klijent K);
+			Session[nameof(Klijent)] = K;
+			FillSelectedClient(K);
 		}
 	}
 }

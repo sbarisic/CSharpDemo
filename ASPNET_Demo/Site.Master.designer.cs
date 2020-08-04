@@ -13,6 +13,15 @@ namespace ASPNET_Demo {
 	public partial class SiteMaster {
 
 		/// <summary>
+		/// ScriptMgr control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.ScriptManager ScriptMgr;
+
+		/// <summary>
 		/// divClientSelection control.
 		/// </summary>
 		/// <remarks>
@@ -67,6 +76,15 @@ namespace ASPNET_Demo {
 		protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
 		/// <summary>
+		/// divPopupSelectClient control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPopupSelectClient;
+
+		/// <summary>
 		/// ibroj control.
 		/// </summary>
 		/// <remarks>
@@ -74,6 +92,15 @@ namespace ASPNET_Demo {
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.HtmlControls.HtmlInputText ibroj;
+
+		/// <summary>
+		/// btnSelectClient control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnSelectClient;
 
 		/// <summary>
 		/// divPopupKlijent control.
@@ -119,5 +146,14 @@ namespace ASPNET_Demo {
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPopupNepoznato;
+
+		/// <summary>
+		/// divPopupSpool control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPopupSpool;
 	}
 }

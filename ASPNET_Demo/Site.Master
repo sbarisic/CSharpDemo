@@ -18,7 +18,7 @@
 </head>
 <body>
 	<form runat="server">
-		<asp:ScriptManager runat="server">
+		<asp:ScriptManager ID="ScriptMgr" EnablePageMethods="true" EnablePartialRendering="true" runat="server">
 			<Scripts>
 				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
 				<%--Framework Scripts--%>
@@ -41,7 +41,7 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 		</div>
 
-		<div id="divClientSelection" class="clientsel" runat="server">
+		<div id="divClientSelection" class="clientsel" runat="server" visible="false">
 			<label>Ime:</label>
 			<asp:Label ID="lblIme" runat="server">IME</asp:Label>
 			<label>Prezime:</label>
@@ -67,27 +67,139 @@
 		</div>
 
 
-		<div class="popup" runat="server">
-			<label for="ibroj">Interni broj</label>
-			<input type="text" id="ibroj" name="ibroj" runat="server"><br>
-			<br>
-			<input type="submit" value="Find" runat="server" />
-
-			<br />
-			<br />
-			<div id="divPopupKlijent" runat="server">
-				<label>Ime:</label>
-				<asp:Label ID="lblImePopup" runat="server">IME</asp:Label>
-				<label>Prezime:</label>
-				<asp:Label ID="lblPrezimePopup" runat="server">PREZIME</asp:Label>
+		<div id="divPopupSelectClient" class="overlay" runat="server">
+			<div class="popup" runat="server">
+				<label for="ibroj">Interni broj</label>
+				<input type="text" id="ibroj" name="ibroj" onkeyup="clearFoundClient()" runat="server"><br>
 				<br />
-				<label>Interni broj:</label>
-				<asp:Label ID="lblInterniBrojPopup" runat="server">000000</asp:Label>
+
+				<%--<input type="submit" value="Find" runat="server" />--%>
+				<asp:Button ID="btnSelectClient" Text="Find" OnClientClick="return findClient()" OnClick="btnSelectClient_Click" runat="server" />
+
+				<div id="divPopupKlijent" runat="server">
+					<br />
+					<br />
+					<label>Ime:</label>
+					<asp:Label ID="lblImePopup" runat="server">IME</asp:Label>
+					<label>Prezime:</label>
+					<asp:Label ID="lblPrezimePopup" runat="server">PREZIME</asp:Label>
+					<br />
+					<label>Interni broj:</label>
+					<asp:Label ID="lblInterniBrojPopup" runat="server">000000</asp:Label>
+				</div>
+
+				<div id="divPopupNepoznato" runat="server">
+					<br />
+					<br />
+					<label>Nepoznat klijent</label>
+				</div>
 			</div>
-			<div id="divPopupNepoznato" runat="server">
-				<label>Nepoznat klijent</label>
+		</div>
+
+		<div id="divPopupSpool" class="overlay" runat="server">
+			<div class="popup" runat="server">
+				<img src="Content/images/rotator.gif" />
 			</div>
 		</div>
 	</form>
 </body>
 </html>
+
+<script type="text/javascript">
+	var divPopupSelectedClient = '#<%= divPopupSelectClient.ClientID %>';
+	var divPopupKlijent = '#<%= divPopupKlijent.ClientID %>';
+	var divPopupNepoznato = '#<%= divPopupNepoznato.ClientID %>';
+	var divPopupSpool = '#<%= divPopupSpool.ClientID %>';
+
+	var lblImePopup = '#<%= lblImePopup.ClientID %>';
+	var lblPrezimePopup = '#<%= lblPrezimePopup.ClientID %>';
+	var lblInterniBrojPopup = '#<%= lblInterniBrojPopup.ClientID %>';
+	var btnSelectClient = '#<%= btnSelectClient.ClientID %>';
+
+	var ibroj = '#<%= ibroj.ClientID %>';
+
+	var lastInterniBroj = null;
+	var clientFound = false;
+
+	function showSpool() {
+		$(divPopupSpool).show();
+	}
+
+	function hideSpool() {
+		$(divPopupSpool).hide();
+	}
+
+	function showSelectClient() {
+		$(divPopupSelectedClient).show();
+		$(divPopupKlijent).hide();
+		$(divPopupNepoznato).hide();
+	}
+
+	function clearSelectClient() {
+		PageMethods.ClearClient(onClearSelectClientResult);
+	}
+
+	function onClearSelectClientResult() {
+		$(divPopupSelectedClient).hide();
+		//window.location = window.location.href;
+		window.location.assign(document.URL);
+	}
+
+	function findClient() {
+		var interniBroj = $(ibroj).val();
+
+		if (clientFound && interniBroj == lastInterniBroj)
+			return true;
+
+		lastInterniBroj = interniBroj;
+
+		showSpool();
+		PageMethods.FindClient(interniBroj, onFindClientResult);
+		return false;
+	}
+
+	function clearFoundClient() {
+		$(btnSelectClient).val("Find");
+		$(divPopupKlijent).hide();
+		$(divPopupNepoznato).hide();
+		clientFound = false;
+	}
+
+	function onFindClientResult(res) {
+		clearFoundClient();
+
+		if (res == null) {
+			$(divPopupNepoznato).show();
+
+			hideSpool();
+			return;
+		}
+
+		clientFound = true;
+		$(lblImePopup).html(res[0]);
+		$(lblPrezimePopup).html(res[1]);
+		$(lblInterniBrojPopup).html(res[2]);
+		$(btnSelectClient).val("Select");
+		$(divPopupKlijent).show();
+		hideSpool();
+	}
+
+	$(divPopupSelectedClient).hide();
+	clearFoundClient();
+	hideSpool();
+
+	$("body").keydown(function (e) {
+		var keyCode = e.keyCode || e.which;
+
+		// F1
+		if (keyCode == 112) {
+			e.preventDefault();
+
+			if ($(divPopupSelectedClient).is(":visible")) {
+				clearSelectClient();
+			} else {
+				showSelectClient();
+			}
+		}
+	});
+</script>

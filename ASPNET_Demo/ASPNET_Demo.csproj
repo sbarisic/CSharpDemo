@@ -109,17 +109,20 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <None Include="Connected Services\AspNetWS\AspNetWS.disco" />
+    <None Include="Connected Services\AspNetWS\AspNetWS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AspNetWS\configuration91.svcinfo" />
     <None Include="Connected Services\AspNetWS\configuration.svcinfo" />
     <None Include="Connected Services\AspNetWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\rotator.gif" />
     <Content Include="Content\images\zweite.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
@@ -140,6 +143,7 @@
     <None Include="Connected Services\AspNetWS\AspNetWS1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\DataSources\ZweiteShared.Klijent.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -187,17 +191,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="code\CustomAttributes.cs" />
+    <Compile Include="code\ZweitePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Connected Services\AspNetWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -252,6 +252,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AspNetWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZweiteShared\ZweiteShared.csproj">
+      <Project>{0566970e-1f30-4b4f-8d8a-1cbac33d627d}</Project>
+      <Name>ZweiteShared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

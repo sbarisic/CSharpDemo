@@ -4,24 +4,25 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:60822/AspNetWS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:60822/AspNetWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60822/AspNetWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ZweiteShared" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IAspNetWS_CrappySum_InputMessage">
-    <wsdl:part name="parameters" element="tns:CrappySum" />
+  <wsdl:message name="IAspNetWS_FindClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindClient" />
   </wsdl:message>
-  <wsdl:message name="IAspNetWS_CrappySum_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CrappySumResponse" />
+  <wsdl:message name="IAspNetWS_FindClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindClientResponse" />
   </wsdl:message>
   <wsdl:portType name="IAspNetWS">
-    <wsdl:operation name="CrappySum">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAspNetWS/CrappySum" message="tns:IAspNetWS_CrappySum_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAspNetWS/CrappySumResponse" message="tns:IAspNetWS_CrappySum_OutputMessage" />
+    <wsdl:operation name="FindClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAspNetWS/FindClient" message="tns:IAspNetWS_FindClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAspNetWS/FindClientResponse" message="tns:IAspNetWS_FindClient_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAspNetWS" type="tns:IAspNetWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="CrappySum">
-      <soap:operation soapAction="http://tempuri.org/IAspNetWS/CrappySum" style="document" />
+    <wsdl:operation name="FindClient">
+      <soap:operation soapAction="http://tempuri.org/IAspNetWS/FindClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

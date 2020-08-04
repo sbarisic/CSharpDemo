@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET", "ASP.NET", "{0323
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET_WS_Demo", "ASPNET_WS_Demo\ASPNET_WS_Demo.csproj", "{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZweiteShared", "ZweiteShared\ZweiteShared.csproj", "{0566970E-1F30-4B4F-8D8A-1CBAC33D627D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0566970E-1F30-4B4F-8D8A-1CBAC33D627D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0566970E-1F30-4B4F-8D8A-1CBAC33D627D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0566970E-1F30-4B4F-8D8A-1CBAC33D627D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0566970E-1F30-4B4F-8D8A-1CBAC33D627D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C8A6DBB9-AECD-4CA0-8A76-2FC61AA9CB5D} = {03230D37-2276-4F1D-8B00-81DB911207E9}
 		{D7EC4FF6-3C4E-4CFA-ADF0-57FF389F0DBD} = {03230D37-2276-4F1D-8B00-81DB911207E9}
+		{0566970E-1F30-4B4F-8D8A-1CBAC33D627D} = {03230D37-2276-4F1D-8B00-81DB911207E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68EDE2BD-E901-493C-932E-93CE5588B282}

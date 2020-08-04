@@ -15,11 +15,11 @@ namespace ASPNET_Demo.AspNetWS {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AspNetWS.IAspNetWS")]
     public interface IAspNetWS {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/CrappySum", ReplyAction="http://tempuri.org/IAspNetWS/CrappySumResponse")]
-        int CrappySum(int A, int B);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/FindClient", ReplyAction="http://tempuri.org/IAspNetWS/FindClientResponse")]
+        ZweiteShared.Klijent FindClient(string InterniBroj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/CrappySum", ReplyAction="http://tempuri.org/IAspNetWS/CrappySumResponse")]
-        System.Threading.Tasks.Task<int> CrappySumAsync(int A, int B);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/FindClient", ReplyAction="http://tempuri.org/IAspNetWS/FindClientResponse")]
+        System.Threading.Tasks.Task<ZweiteShared.Klijent> FindClientAsync(string InterniBroj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace ASPNET_Demo.AspNetWS {
                 base(binding, remoteAddress) {
         }
         
-        public int CrappySum(int A, int B) {
-            return base.Channel.CrappySum(A, B);
+        public ZweiteShared.Klijent FindClient(string InterniBroj) {
+            return base.Channel.FindClient(InterniBroj);
         }
         
-        public System.Threading.Tasks.Task<int> CrappySumAsync(int A, int B) {
-            return base.Channel.CrappySumAsync(A, B);
+        public System.Threading.Tasks.Task<ZweiteShared.Klijent> FindClientAsync(string InterniBroj) {
+            return base.Channel.FindClientAsync(InterniBroj);
         }
     }
 }

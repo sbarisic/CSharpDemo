@@ -8,7 +8,7 @@ using ASPNET_Demo.code;
 
 namespace ASPNET_Demo {
 	[LinkedPage(20)]
-	public partial class About : Page {
+	public partial class About : ZweitePage {
 		protected void Page_Load(object sender, EventArgs e) {
 
 		}

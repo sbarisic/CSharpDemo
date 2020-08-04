@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="CrappySum">
+  <xs:import schemaLocation="http://localhost:60822/AspNetWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ZweiteShared" />
+  <xs:element name="FindClient">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="A" type="xs:int" />
-        <xs:element minOccurs="0" name="B" type="xs:int" />
+        <xs:element minOccurs="0" name="InterniBroj" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CrappySumResponse">
+  <xs:element name="FindClientResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CrappySumResult" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ZweiteShared" minOccurs="0" name="FindClientResult" nillable="true" type="q1:Klijent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

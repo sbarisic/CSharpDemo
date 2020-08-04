@@ -22,6 +22,7 @@
     <MetadataSource Address="http://localhost:60822/AspNetWS.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="AspNetWS2.xsd" MetadataType="Schema" ID="e95b0812-91d0-4aee-aa4b-66b2627c6c88" SourceId="1" SourceUrl="http://localhost:60822/AspNetWS.svc?xsd=xsd2" />
     <MetadataFile FileName="AspNetWS.wsdl" MetadataType="Wsdl" ID="5731ce16-8be2-4552-83dc-380caa447edc" SourceId="1" SourceUrl="http://localhost:60822/AspNetWS.svc?wsdl" />
     <MetadataFile FileName="AspNetWS.xsd" MetadataType="Schema" ID="9d91f947-3795-4066-a53a-f46efb005a8a" SourceId="1" SourceUrl="http://localhost:60822/AspNetWS.svc?xsd=xsd1" />
     <MetadataFile FileName="AspNetWS1.xsd" MetadataType="Schema" ID="04c969d4-0fd1-457b-831b-123f871dc4cd" SourceId="1" SourceUrl="http://localhost:60822/AspNetWS.svc?xsd=xsd0" />
