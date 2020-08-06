@@ -15,4 +15,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCustomConfig">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ZweiteShared" minOccurs="0" name="GetCustomConfigResult" nillable="true" type="q2:CustomConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

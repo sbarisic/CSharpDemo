@@ -9,4 +9,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Klijent" nillable="true" type="tns:Klijent" />
+  <xs:complexType name="CustomConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomConfig" nillable="true" type="tns:CustomConfig" />
 </xs:schema>

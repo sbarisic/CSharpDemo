@@ -11,5 +11,8 @@ namespace ASPNET_WS_Demo {
 	public interface IAspNetWS {
 		[OperationContract]
 		Klijent FindClient(string InterniBroj);
+
+		[OperationContract]
+		CustomConfig GetCustomConfig();
 	}
 }

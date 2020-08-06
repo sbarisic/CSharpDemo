@@ -13,16 +13,35 @@
   <wsdl:message name="IAspNetWS_FindClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindClientResponse" />
   </wsdl:message>
+  <wsdl:message name="IAspNetWS_GetCustomConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomConfig" />
+  </wsdl:message>
+  <wsdl:message name="IAspNetWS_GetCustomConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomConfigResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAspNetWS">
     <wsdl:operation name="FindClient">
       <wsdl:input wsaw:Action="http://tempuri.org/IAspNetWS/FindClient" message="tns:IAspNetWS_FindClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAspNetWS/FindClientResponse" message="tns:IAspNetWS_FindClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAspNetWS/GetCustomConfig" message="tns:IAspNetWS_GetCustomConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAspNetWS/GetCustomConfigResponse" message="tns:IAspNetWS_GetCustomConfig_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAspNetWS" type="tns:IAspNetWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="FindClient">
       <soap:operation soapAction="http://tempuri.org/IAspNetWS/FindClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomConfig">
+      <soap:operation soapAction="http://tempuri.org/IAspNetWS/GetCustomConfig" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

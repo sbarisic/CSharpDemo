@@ -144,6 +144,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Properties\DataSources\ZweiteShared.Klijent.datasource" />
+    <Content Include="Properties\DataSources\ZweiteShared.CustomConfig.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />

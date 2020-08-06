@@ -20,6 +20,12 @@ namespace ASPNET_Demo.AspNetWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/FindClient", ReplyAction="http://tempuri.org/IAspNetWS/FindClientResponse")]
         System.Threading.Tasks.Task<ZweiteShared.Klijent> FindClientAsync(string InterniBroj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/GetCustomConfig", ReplyAction="http://tempuri.org/IAspNetWS/GetCustomConfigResponse")]
+        ZweiteShared.CustomConfig GetCustomConfig();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAspNetWS/GetCustomConfig", ReplyAction="http://tempuri.org/IAspNetWS/GetCustomConfigResponse")]
+        System.Threading.Tasks.Task<ZweiteShared.CustomConfig> GetCustomConfigAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace ASPNET_Demo.AspNetWS {
         
         public System.Threading.Tasks.Task<ZweiteShared.Klijent> FindClientAsync(string InterniBroj) {
             return base.Channel.FindClientAsync(InterniBroj);
+        }
+        
+        public ZweiteShared.CustomConfig GetCustomConfig() {
+            return base.Channel.GetCustomConfig();
+        }
+        
+        public System.Threading.Tasks.Task<ZweiteShared.CustomConfig> GetCustomConfigAsync() {
+            return base.Channel.GetCustomConfigAsync();
         }
     }
 }
